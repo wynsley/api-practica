@@ -1,0 +1,42 @@
+{
+  "name": "api-practica",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "nodemon src/app.js",
+    "generate" : "prisma generate",
+    "migrate" : "prisma migrate dev",
+    "seed" : "node src/seed.js",
+    "db:reset" : "prisma migrate reset" 
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.8.1",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@12.8.1",
+  "type": "module",
+  "dependencies": {
+    "@prisma/client": "^6.19.3",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "dotenv": "^18.0.4",
+    "nodemon": "3.1.14",
+    "prisma": "^6.19.3"
+  },
+
+  "imports": {
+    "#prisma/*": "./src/generated/prisma/*",
+    "#src/*": "./src/*"
+  }
+}
